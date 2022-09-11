@@ -1,3 +1,6 @@
+import calendar
+import time
+from datetime import datetime
 import math 
 
 def timGiaTriMaxMin():
@@ -56,9 +59,9 @@ def word_search(doc_list, keyword):
         split_doc = doc_list[x].split()
         for y in split_doc:
             '''tách các word thành letter và check nếu tất cả letter đều là alphabet và number thì giữ lại và join
-            example: getVals =  "123abcjw:, .@! eiw" = ['1', '2', ... , 'a' , 'b', 'c', ... , '.', '@', '!' ,..., 'e', 'i', 'w']
-            getVals = ['1','2','3','a','b','c','j','w','e','i','w']
-            getVals = "123abcjweiw"
+            example: getVals =  "123abcjw:, .@! eiw" = ['1', '2', ... , 'a' , 'b', 'c', ... , '.', '@', '!' ,..., 'e', 'i', 'w'] -Chuỗi original
+            getVals = ['1','2','3','a','b','c','j','w','e','i','w'] -Chuỗi sau khi tách các ký tự đặc biệt
+            getVals = "123abcjweiw" -Chuỗi sau khi join
             '''
             getVals = list([val for val in y if val.isalpha() or val.isnumeric()])
             getVals = "".join(getVals)
@@ -124,6 +127,25 @@ def xu_ly_chuoi():
     print(f'Số lần {s_sub} xuất hiện trong {s}: {count}')
     print(f'Chuỗi {s} sau khi tìm kiếm và thay thế: {chuoi_ket_qua}')
 
+def su_dung_Datetimes():
+    ngay, thang, nam = [int (x) for x in input("Nhập ngày tháng năm cần xử lý\n").split()]
+    ngay_trong_tuan = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ 7', 'Chủ nhật']
+    if datetime(nam, thang, ngay):
+        user_data = datetime(nam, thang, ngay)
+        print(f"Ngày tháng năm đã nhập là {user_data.strftime('%d-%m-%Y')}")
+        if calendar.isleap(nam):
+            print(f'Năm đã nhập {nam} là năm nhuận')
+        else:
+            print(f'Năm đã nhập {nam} không là năm nhuận')
+        ngay_can_tim = calendar.weekday(nam, thang, ngay)
+        print(f'Ngày {ngay}/{thang}/{nam} đã nhập vào là {ngay_trong_tuan[ngay_can_tim]}')
+        so_ngay_trong_thang = calendar.monthrange(nam, thang)[1]
+        print(f'Tháng {thang} có {so_ngay_trong_thang} ngày')
+    else:
+        print("Chương trình Error")
+    
+
+
 def main():
     # timGiaTriMaxMin()
     # timGiaTriTuyetDoi()
@@ -138,6 +160,9 @@ def main():
         {'name' : 'Toad', 'items' : ['green shell', 'mushroom',], 'finish': 1},
     ]
     keywords = ['casino', 'they']
-    xu_ly_chuoi()
+    # xu_ly_chuoi()
+    su_dung_Datetimes()
+
+    
 if __name__ == "__main__":
     main()

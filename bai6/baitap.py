@@ -51,7 +51,6 @@ def giaiPhuongTrinhBac2():
                 print("Phương trình vô số nghiệm")
         else:
             print(f'Phương trình có 1 nghiệm là x = {-c/b}')
-        
 
 def word_search(doc_list, keyword):
     result = {}
@@ -143,7 +142,7 @@ def su_dung_Datetimes():
         print(f'Tháng {thang} có {so_ngay_trong_thang} ngày')
     else:
         print("Chương trình Error")
-    
+
 
 
 def main():

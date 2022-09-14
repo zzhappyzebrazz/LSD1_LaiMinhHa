@@ -1,3 +1,24 @@
 List, Tuple, Dictionary, Set --> Thường sử dụng List, Dictionay, với Tuple là kết quả các hàm python trả về
 Tạo list nhanh
 list_1 = [i for i in range(1,100)]
+
+list.extend return None -> không thể gọi chain extend vì sẽ return None và None không iter được -> error
+list.sort(reverse=true) -> sort và đảo chiều lớn -> bé
+list.clear() = []
+del list -> delete variable (destructor)
+list.reverse()
+
+List Comprehension
+list = [expression for expresion in list]
+
+for x in list:
+
+---> sau khi thoát khỏi vòng lặp for, biến x vẫn còn tồn tại và có giá trị bằng element cuối cùng của list
+
+List khi gọi = sẽ truyền tham chiếu -> không gọi copy constructor
+list2 = list1.copy()
+
+
+TUPLE
+tuple 1 phần tử khai báo tup = (1,) hoặc tup = 1,
+tuple không thể thay đổi giá trị của element, chỉ cho quyền truy cập

@@ -1,0 +1,7 @@
+Tuple = ('red', 'green', 'yellow', 'blue', 'black', 'white', 'pink', 'orange', 'red', 'blue')
+index_duong = int(input('Nhập số từ 0 đến 9: '))
+index_am = int(input('Nhập số từ -1 đến -9: '))
+s_find = input('Nhập chuỗi cần tìm:\n')
+print(f'Tuple[{index_duong}] = {Tuple[index_duong]}')
+print(f'Tuple[{index_am}] = {Tuple[index_am]}')
+print(f'{s_find} xuất hiện trong tuple {Tuple.count(s_find)} lần')

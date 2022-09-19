@@ -1,7 +1,7 @@
 import calendar
 import time
 from datetime import datetime
-import math 
+import math
 
 def timGiaTriMaxMin():
     userData = [float (x) for x in input("Nhập dãy số cần tìm Max và Min\n").split()]

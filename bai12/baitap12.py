@@ -1,5 +1,7 @@
 import datetime
 import math
+import pandas
+import django
 
 def nam_toi__100_tuoi():
     ho_ten = input('Tên của bạn là gì?')
